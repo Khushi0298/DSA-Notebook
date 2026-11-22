@@ -1,3 +1,5 @@
+![Dashboard](docs/Dashboard.png)
+
 # DSA Notebook
 
 A spaced-repetition notebook for data structures and algorithms problems. Save each problem with its statement, approach, complexity and the trick that made it click, then revise it just before you would forget it.
