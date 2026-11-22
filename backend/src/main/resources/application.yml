@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+spring:
+  application:
+    name: dsa-notebook-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/dsanotebook}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    hikari:
+      maximum-pool-size: 3
+      minimum-idle: 0
+      idle-timeout: 120000
+      max-lifetime: 300000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+app:
+  jwt-secret: ${JWT_SECRET:dev-only-secret-change-me-dev-only-secret-change-me}
+  frontend-url: ${FRONTEND_URL:http://localhost:5173,http://localhost:5174}
+  admin-email: ${ADMIN_EMAIL:}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
